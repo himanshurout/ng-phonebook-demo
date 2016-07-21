@@ -1,0 +1,44 @@
+<div class="col-md-12">
+
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li><a href="#/home">Home</a></li>
+        <li class="active">contacts</li>
+    </ul>
+</div>
+<!--<hr/>-->
+<a class="btn btn-success glyphicon glyphicon-plus" href='#/contact/' >&nbsp;Add New contact</a>
+<br/><br/>
+<div class="table-responsive">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+        <div class="row">
+            <div class="col-xs-4">
+                <h3>contacts</h3><h6>Total: {{contacts.length}}</h6>
+            </div>
+            <div class="col-xs-8">
+              <label for="search">Search:</label>
+              <input placeholder="Filter contact list..." class="form-control" ng-model="filterVar" autocomplete="off" type="text" focus>
+            </div>
+        </div>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+    <tr ng-show="contacts.length==0"><td style="vertical-align:middle;" colspan="6"><i class="fa fa-ban fa-3x"></i>&nbsp;No data found</td></tr>
+    <tr><th ng-repeat="c in columns">{{c.text}}</th></tr>
+
+    <tr ng-repeat="d in contacts | filter:filterVar">
+        <td>{{d.name}}</td><td>{{d.company}}</td><td>{{d.desg}}</td><td>{{d.gender}}</td><td>{{d.phone}}</td>
+        <td style="width:100px">
+            <div class="btn-group">
+              <a class="btn btn-default glyphicon glyphicon-pencil" href="#/contact/{{d.id}}"></a>
+              <button type="button" class="btn btn-danger glyphicon glyphicon-trash" ng-click="deletecontact(d);"></button>
+            </div>
+        </td>
+    </tr>
+    </table>
+</div>
+</div>
+</div>
+
+</div>

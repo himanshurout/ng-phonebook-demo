@@ -1,0 +1,28 @@
+{
+  "name": "phonebook-demo",
+  "description": "Demo phonebook app",
+  "main": "index.js",
+  "authors": [
+    "Himanshu Rout"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "phonebook"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-ui-router": "^0.3.1",
+    "toastr": "^2.1.2",
+    "bootstrap": "^3.3.6",
+    "AngularJS-Toaster": "angularjs-toaster#^2.0.0"
+  }
+}

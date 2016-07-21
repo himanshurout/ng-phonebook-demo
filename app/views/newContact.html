@@ -1,0 +1,76 @@
+<div class="col-md-12">
+
+<div class="breadcrumbs ng-scope" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/contacts">contacts</a></li>
+        <li class="active">{{contact.name}}</li>
+    </ul>
+</div>
+    <h4 class="blog-post-title">{{ pagetitle }}</h4>
+    <div id="contact-alerts-container"></div>
+    <hr/>
+    <div class="panel panel-primary">
+            <div class="panel-heading">{{contact.name}} contact Details
+            </div>
+            <div class="panel-body">
+                <form name="contact_form" class="form-horizontal" role="form" novalidate>
+                    <div class="form-group control-group">
+                        <label for="inputName" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="inputName" id="inputName" placeholder="" ng-model="contact.name" required>
+                            <small class="errorMessage" ng-show="contact_form.inputName.$touched && contact_form.inputName.$error.required"> Enter the contact's name.</small>
+                        </div>
+                    </div>
+                    <div class="form-group control-group">
+                        <label for="inputCompany" class="col-sm-2 control-label">Company</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="inputCompany" id="inputCompany" placeholder="" ng-model="contact.company">
+                        </div>
+                    </div>
+					<div class="form-group control-group">
+                        <label for="inputDesg" class="col-sm-2 control-label">Designation</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="inputDesg" id="inputDesg" placeholder="" ng-model="contact.desg">
+                        </div>
+                    </div>
+					<div class="form-group control-group">
+                        <label class="col-sm-2 control-label">Gender</label>
+                        <div class="col-sm-10">
+                            <label><input type="radio" name="rbtGender" ng-model="contact.gender" value="Male" required>Male</label>
+							<label><input type="radio" name="rbtGender" ng-model="contact.gender" value="Female" required>Female</label>
+							<small class="errorMessage" ng-show="contact_form.rbtGender.$touched && contact_form.rbtGender.$error.required"> Select gender.</small>
+                        </div>
+                    </div>
+					<div class="form-group control-group">
+                        <label for="inputPhone" class="col-sm-2 control-label">Phone</label>
+                        <div class="col-sm-10">
+                            <!-- <input class="form-control" name="inputPhone" id="inputPhone" placeholder="" ng-model="contact.phone" required> -->
+
+                            <phonenumber placeholder="myPrompt" model='contact.phone'></phonenumber>
+                            <small class="errorMessage" ng-show="contact_form.inputPhone.$touched && contact_form.inputPhone.$invalid"> Enter valid Phone.</small>
+                        </div>
+                    </div>
+<hr/>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <a class="btn btn-sm" href="#/contacts">&nbsp;Cancel</a>
+                            <button ng-click="savecontact(contact);"
+                                    ng-disabled="contact_form.$invalid"
+                                    class="btn btn-sm btn-primary"
+                                    type="submit">
+                                <i class="glyphicon glyphicon-ok">&nbsp;</i>{{buttonText}}
+                            </button>
+                        </div>
+                    </div>
+                        <!--<span>{{formInfo}}</span>-->
+                    </form>
+                <!--</table>-->
+
+
+                <!--<pre>contact object = {{contact}}</pre>-->
+
+            </div>
+        </div>
+
+</div>
